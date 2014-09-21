@@ -53,7 +53,7 @@ public class CheckActivity extends Activity implements View.OnClickListener {
     }
 
 
-    public String getWeekData(){
+    public String getWeEEekData(){
 
         /*ArrayList<Cal> cals = dataSource.getUserActiveTasks(pref.getLong("user_id", 0),
                 pref.getLong( "task_id", 0));
