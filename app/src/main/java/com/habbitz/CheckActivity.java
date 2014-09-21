@@ -1,29 +1,42 @@
 package com.habbitz;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 
-public class CheckActivity extends ActionBarActivity {
+public class CheckActivity extends Activity implements View.OnClickListener {
 
     dbSource dataSource;
+    ImageButton yes_full;
+    ImageButton no_full;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check);
-
         dataSource = new dbSource(this);
         dataSource.open();
+
+    ImageButton yesButton = (ImageButton) findViewById(R.id.imageButton);
+    ImageButton noButton = (ImageButton) findViewById(R.id.imageButton2);
+
+       yesButton.setOnClickListener(this);
+       noButton.setOnClickListener(this);
+
     }
+
+
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.check, menu);
+       // getMenuInflater().inflate(R.menu.check, menu);
         return true;
     }
 
@@ -57,6 +70,24 @@ public class CheckActivity extends ActionBarActivity {
         }*/
 
         return "test";
+
+    }
+
+    @Override
+    public void onClick(View view)
+    {
+        if(view.getId()== R.id.imageButton)
+        {
+            //yesButton.setImageResource(R.drawable.yes_full);
+            //view.setBackground(R.drawable.yes_full);
+            yes_full= (ImageButton) view;
+           yes_full.setImageResource(R.drawable.yes_full);
+        }
+        else
+        {
+            no_full= (ImageButton) view;
+            no_full.setImageResource(R.drawable.no_full);
+        }
 
     }
 }

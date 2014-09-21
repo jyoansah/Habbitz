@@ -7,5 +7,7 @@
     <string name="title_activity_list">ListActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_check">CheckActivity</string>
+    <string name="title_activity_yes_goal">yes_goal</string>
+    <string name="title_activity_no_goal">no_goal</string>
 
 </resources>

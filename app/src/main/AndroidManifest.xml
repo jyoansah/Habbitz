@@ -8,27 +8,33 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".LoginActivity"
+            android:name="com.habbitz.LoginActivity"
             android:label="@string/app_name" >
-
+        </activity>
+        <activity
+            android:name="com.habbitz.ListActivity"
+            android:label="@string/title_activity_list" >
+        </activity>
+        <activity
+            android:name="com.habbitz.RegisterActivity"
+            android:label="@string/title_activity_register" >
+        </activity>
+        <activity
+            android:name="com.habbitz.CheckActivity"
+            android:label="@string/title_activity_check" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name=".ListActivity"
-            android:label="@string/title_activity_list" >
+            android:name="com.habbitz.yes_goal"
+            android:label="@string/title_activity_yes_goal" >
         </activity>
         <activity
-            android:name=".RegisterActivity"
-            android:label="@string/title_activity_register" >
-        </activity>
-        <activity
-            android:name=".CheckActivity"
-            android:label="@string/title_activity_check" >
+            android:name="com.habbitz.no_goal"
+            android:label="@string/title_activity_no_goal" >
         </activity>
     </application>
 
