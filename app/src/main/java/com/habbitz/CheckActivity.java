@@ -93,9 +93,7 @@ public class CheckActivity extends Activity implements View.OnClickListener {
             no_full= (ImageButton) view;
             no_full.setImageResource(R.drawable.no_full);
 
-            Intent j=new Intent(
-                    CheckActivity.this,
-                    no_goal.class);
+            Intent j=new Intent( CheckActivity.this,  no_goal.class);
             startActivity(j);
         }
 

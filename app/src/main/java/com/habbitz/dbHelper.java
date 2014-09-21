@@ -22,8 +22,8 @@ public class dbHelper extends SQLiteOpenHelper{
     public static final String FIRST_NAME = "fname";
     public static final String LAST_NAME = "lname";
     public static final String USERNAME = "username";
-    public static final String EMAIL = "username";
-    public static final String PASSWORD = "username";
+    public static final String EMAIL = "email";
+    public static final String PASSWORD = "password";
     public static final String TASK_LIST = "tasklist";
 
     public static final String NAME = "name";

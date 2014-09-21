@@ -1,38 +1,76 @@
 package com.habbitz;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class LoginActivity extends ActionBarActivity {
 
     dbSource dataSource;
-    SharedPreferences pref =this.getSharedPreferences(
-            "com.habbitz.app", Context.MODE_PRIVATE);
+    SharedPreferences pref;
+    String userString;
+    String passString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        pref =this.getSharedPreferences(
+                       "com.habbitz", Context.MODE_PRIVATE);
+
         dataSource = new dbSource(this);
         dataSource.open();
 
-        //read the fields
-        //
-        // Profile user = dataSource.login(username, password);
-        //
-        //if( user == null){
-            //login incorrect
-        //}
-        //else{
-        //    pref.edit().putLong("userid", user.getId());
-        //}
-        //redirect to List
+        final EditText username = (EditText) findViewById(R.id.txt_username);
+        final EditText password = (EditText) findViewById(R.id.txt_password);
+
+        Button Signin = (Button) findViewById(R.id.button_signin);
+
+        Signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+               userString =  username.getText().toString();
+               passString = password.getText().toString();
+
+
+                Profile user = dataSource.login(userString, passString);
+
+
+                if( user == null){
+                    //login incorrect
+                }
+                else{
+                    pref.edit().putLong("userid", user.getId());
+                    Intent signUpIntent = new Intent(LoginActivity.this, ListActivity.class);
+                    startActivity(signUpIntent);
+                }
+            }
+        });
+
+
+
+        Button Signup = (Button) findViewById(R.id.button_signup);
+
+        Signup.setOnClickListener(new View.OnClickListener(){
+            @Override
+        public void onClick(View view)
+            {
+                Intent signUpIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(signUpIntent);
+
+            }
+
+        });
 
 
     }
