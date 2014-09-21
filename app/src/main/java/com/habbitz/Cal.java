@@ -17,7 +17,6 @@ public class Cal
 
     }
 
-
     public void setUserId(long userId)
     {
         this.userId = userId;

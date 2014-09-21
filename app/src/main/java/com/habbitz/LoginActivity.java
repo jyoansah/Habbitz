@@ -1,7 +1,9 @@
 package com.habbitz;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -9,6 +11,8 @@ import android.view.MenuItem;
 public class LoginActivity extends ActionBarActivity {
 
     dbSource dataSource;
+    SharedPreferences pref =this.getSharedPreferences(
+            "com.habbitz.app", Context.MODE_PRIVATE);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +21,21 @@ public class LoginActivity extends ActionBarActivity {
 
         dataSource = new dbSource(this);
         dataSource.open();
+
+        //read the fields
+        //
+        // Profile user = dataSource.login(username, password);
+        //
+        //if( user == null){
+            //login incorrect
+        //}
+        //else{
+        //    pref.edit().putLong("userid", user.getId());
+        //}
+        //redirect to List
+
+
+
     }
 
 
@@ -38,11 +57,6 @@ public class LoginActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public boolean dologin(String username, String password){
-
-        return true;
     }
 
 }

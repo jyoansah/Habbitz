@@ -55,6 +55,29 @@ public class dbSource {
         return newProfile;
     }
 
+    public Profile login(String username, String password){
+
+        Cursor cursor = database.query(dbHelper.TABLE_USERS,
+                userColumns, dbHelper.USERNAME + " = " + username, null,
+                null, null, null);
+
+        if(cursor.getCount() == 0){
+            return null;
+        }else{
+            cursor.moveToFirst();
+            Profile newProfile = cursorToProfile(cursor);
+
+            if (newProfile.getPassword() != password){
+                return null;
+            }
+
+            return newProfile;
+
+        }
+
+
+    }
+
     public void deleteProfile(Profile user) {
         long id = user.getId();
         System.out.println("User deleted with id: " + id);
@@ -90,6 +113,7 @@ public class dbSource {
         profile.setTaskList(cursor.getString(6));
         return profile;
     }
+
 
 
 
