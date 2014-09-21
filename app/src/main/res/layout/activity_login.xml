@@ -11,10 +11,9 @@
         android:textColor="#FFFFFF"
         android:background="#ff1c71cc"
         android:id="@+id/button_signin"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="48dp"
         android:layout_below="@+id/txt_password"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="match_parent"
