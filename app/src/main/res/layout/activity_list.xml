@@ -14,7 +14,7 @@
         android:layout_width="169dp"
         android:layout_height="wrap_content"
         android:text="ADD NEW TASK"
-        android:id="@+id/button"
+        android:id="@+id/button_newTask"
         android:background="#ff1c71cc"
         android:layout_gravity="center_horizontal" />
 

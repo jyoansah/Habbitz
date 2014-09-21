@@ -35,7 +35,6 @@ public class LoginActivity extends ActionBarActivity {
         //redirect to List
 
 
-
     }
 
 
