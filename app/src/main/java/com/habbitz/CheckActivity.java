@@ -1,6 +1,7 @@
 package com.habbitz;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -82,11 +83,20 @@ public class CheckActivity extends Activity implements View.OnClickListener {
             //view.setBackground(R.drawable.yes_full);
             yes_full= (ImageButton) view;
            yes_full.setImageResource(R.drawable.yes_full);
+            Intent i=new Intent(
+                    CheckActivity.this,
+                    yes_goal.class);
+            startActivity(i);
         }
         else
         {
             no_full= (ImageButton) view;
             no_full.setImageResource(R.drawable.no_full);
+
+            Intent j=new Intent(
+                    CheckActivity.this,
+                    no_goal.class);
+            startActivity(j);
         }
 
     }
