@@ -1,9 +1,11 @@
 package com.habbitz;
 
-import android.support.v7.app.ActionBarActivity;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class RegisterActivity extends ActionBarActivity {
@@ -14,6 +16,10 @@ public class RegisterActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        TextView RegText =(TextView)findViewById(R.id.reg_text);
+        Typeface font = Typeface.createFromAsset(getAssets(), "helvetica-l.ttf");
+        RegText.setTypeface(font);
     }
 
 
